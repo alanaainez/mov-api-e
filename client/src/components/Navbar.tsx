@@ -13,10 +13,10 @@ const Navbar = () => {
     }
   };
 
-  // useEffect hook to run checkLogin() on component mount and when loginCheck state changes
+  // useEffect hook to run checkLogin() on component mount
   useEffect(() => {
     checkLogin();  // Call checkLogin() function to update loginCheck state
-  }, [loginCheck]);  // Dependency array ensures useEffect runs when loginCheck changes
+  }, []);  // Empty dependency array ensures useEffect runs only once on mount
 
   return (
     <div className="flex justify-between items-center py-2 px-5 bg-green-500">
@@ -35,6 +35,7 @@ const Navbar = () => {
             // Render logout button if user is logged in
             <button className="btn" type='button' onClick={() => {
               auth.logout();  // Call logout() method from auth utility on button click
+              setLoginCheck(false);  // Reset loginCheck state to false on logout
             }}>Logout</button>
           )
         }
