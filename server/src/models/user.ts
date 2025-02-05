@@ -41,6 +41,7 @@ export function UserFactory(sequelize: Sequelize): typeof User {
       username: {
         type: DataTypes.STRING,
         allowNull: false,
+        // ToDo: Make this unique? 
       },
       email: {
         type: DataTypes.STRING,
