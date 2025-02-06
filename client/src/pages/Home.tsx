@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import { useState } from 'react';
 import MovieList from '../components/MovieList';
 import MovieListHeading from '../components/MovieListHeading';
 import SearchBox from '../components/SearchBox';
 import AddFavourite from '../components/AddFavourite';
+import RemoveFavourites from '../components/RemoveFavourites';
 import '../index.css';
 
 function App() {
     const [movies, setMovies] = useState([]);
-    const [searchValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState('Star Wars');
     const [favourites, setFavourites] = useState([]);
 
-    const getMovieRequest = async () => {
+    const getMovieRequest = async (searchValue) => {
         const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
     
         const response = await fetch(url);
@@ -27,6 +27,15 @@ function App() {
         const newFavouriteList = [...favourites, movie];
         setFavourites(newFavouriteList);
     };
+    
+    const removeFavouriteMovie = (movie) => {
+        const newFavouriteList = favourites.filter(
+            (favourite) => favourite.imdbID !== movie.imdbID
+        );
+    
+        setFavourites(newFavouriteList);
+    };
+    
     
     useEffect(() => {
         getMovieRequest(searchValue);
@@ -49,7 +58,11 @@ function App() {
             <MovieListHeading heading='Favourites' />
           </div>
           <div className='mb-4 flex row'>
-            <MovieList movies={favourites} favouriteComponent={AddFavourite} />
+            <MovieList
+                movies={favourites}
+                handleFavouritesClick={removeFavouriteMovie}
+                favouriteComponent={RemoveFavourites}
+            />
           </div>
       </section>
     </main>
