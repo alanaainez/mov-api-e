@@ -19,10 +19,9 @@ const Navbar = () => {
   }, []);  // Empty dependency array ensures useEffect runs only once on mount
 
   return (
-    <div className="flex justify-between items-center py-2 px-5 bg-red-900">
-      <h1>
-        Mov"API"e
-      </h1>
+    <nav className="flex justify-between w-fixed w-full flex-shrink flex-grow-0 px-4 items-center py-2 bg-red-900">
+      <div className="flex justify-between items-center sticky top-0 p-4 w-full h-full">
+      <h1 className="text-white font-bold py-2 px-4 text-2xl" >Mov"API"e</h1>
       <div>
         {
           // Conditional rendering based on loginCheck state
@@ -40,7 +39,8 @@ const Navbar = () => {
           )
         }
       </div>
-    </div>
+      </div>
+    </nav>
   )
 }
 

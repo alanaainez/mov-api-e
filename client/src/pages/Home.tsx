@@ -33,19 +33,26 @@ function App() {
     }, [searchValue]);
 
   return (
-    <div>
-      
-      <main className='w-full flex pt-5 px-5'>
+    <main>
+            <section className='w-full flex-grow flex flex-col sm:flex-row flex-wrap py-4 flex-grow' role="main" >
         {/* <Outlet /> */}
-          <div className='w-full flex pt-5 px-5'>
+          <div className='w-full flex-grow pt-1 px-3'>
             <MovieListHeading heading='Movies' />
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
           </div>
-          <section className='w-full flex pt-5 px-5'>
+          <div className='mb-4 flex'>
             <MovieList movies={movies} favouriteComponent={AddFavourite} handleFavouritesClick={addFavouriteMovie} />
-          </section>
-      </main>
-    </div>
+          </div>
+      </section>
+      <section className='w-full flex-grow flex flex-col sm:flex-row flex-wrap py-4 flex-grow' role="main" >
+          <div className='w-full flex-grow pt-1 px-3'>
+            <MovieListHeading heading='Favourites' />
+          </div>
+          <div className='mb-4 flex row'>
+            <MovieList movies={favourites} favouriteComponent={AddFavourite} />
+          </div>
+      </section>
+    </main>
   )
 }
 
