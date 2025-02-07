@@ -55,7 +55,7 @@ function App() {
       </section>
       <section className='w-full flex-grow flex flex-col sm:flex-row flex-wrap py-4 flex-grow' role="main" >
           <div className='w-full flex-grow pt-1 px-3'>
-            <MovieListHeading heading='Favourites' />
+            <MovieListHeading heading='Favorites' />
           </div>
           <div className='mb-4 flex row'>
             <MovieList

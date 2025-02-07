@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 .image-container {
 	position: relative;
 	transition: transform 0.2s;
