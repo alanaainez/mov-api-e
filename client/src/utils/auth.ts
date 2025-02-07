@@ -23,6 +23,9 @@ class AuthService {
     localStorage.removeItem('id_token');
     window.location.assign('/');
   }
+  getUser() {
+    return JSON.parse(localStorage.getItem('user') || '{}');
+  }
 }
 
 // Export an instance of the AuthService class
