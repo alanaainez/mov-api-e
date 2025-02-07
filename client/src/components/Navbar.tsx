@@ -32,7 +32,7 @@ const Navbar = () => {
             </button>
           ) : (
             // Render logout button if user is logged in
-            <button className="btn" type='button' onClick={() => {
+            <button className="bg-orange-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='button' onClick={() => {
               auth.logout();  // Call logout() method from auth utility on button click
               setLoginCheck(false);  // Reset loginCheck state to false on logout
             }}>Logout</button>
