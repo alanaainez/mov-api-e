@@ -9,9 +9,9 @@ const Profile = () => {
   }
 
   interface Favourite {
-    userId: string;
-    movieId: string;
-    movieTitle: string;
+    imdbID: string;
+    Title: string;
+    Poster: string;
   }
 
   const [user, setUser] = useState<User | null>(null);
@@ -27,7 +27,7 @@ const Profile = () => {
     fetchUser();
 
     // Retrieve favourites from local storage
-    const storedFavourites = JSON.parse(localStorage.getItem('favourites') || '[]');
+    const storedFavourites = JSON.parse(localStorage.getItem('react-movie-app-favourites') || '[]');
     setFavourites(storedFavourites);
   }, []);
 
@@ -47,7 +47,10 @@ const Profile = () => {
                 <label className="block text-gray-700">Your Favorites:</label>
                 <ul>
                   {favourites.map((fav, index) => (
-                    <li key={index}>{fav.movieTitle}</li>
+                    <li key={index} className="flex items-center space-x-4">
+                      <img src={fav.Poster} alt={fav.Title} className="w-16 h-24 object-cover" />
+                      <span>{fav.Title}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
