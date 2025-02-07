@@ -4,12 +4,12 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <main className='w-full'>
         <Outlet />
       </main>
-    </div>
+    </>
   );
 }
 
