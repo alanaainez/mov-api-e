@@ -3,6 +3,7 @@ import { UserLogin } from "../interfaces/UserLogin";  // Import the UserLogin in
 // Function to send a POST request to the '/auth/login' endpoint with user login information
 const login = async (userInfo: UserLogin) => {
   try {
+    console.log(userInfo);
     // Send a POST request to '/auth/login' with user login information in JSON format
     const response = await fetch('/auth/login', {
       method: 'POST',
