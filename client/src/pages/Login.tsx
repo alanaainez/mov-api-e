@@ -1,5 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-
+import { useNavigate } from "react-router-dom";
 import Auth from "../utils/auth"; // Import the Auth utility for managing authentication state
 import { login } from "../api/authAPI"; // Import the login function from the API
 import { UserLogin } from "../interfaces/UserLogin"; // Import the interface for UserLogin
@@ -10,6 +10,8 @@ const Login = () => {
     username: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   // Handle changes in the input fields
   const handleChange = (
@@ -30,6 +32,7 @@ const Login = () => {
       const data = await login(loginData);
       // If login is successful, call Auth.login to store the token in localStorage
       Auth.login(data.token);
+      navigate("/profile");
     } catch (err) {
       console.error("Failed to login", err); // Log any errors that occur during login
     }
