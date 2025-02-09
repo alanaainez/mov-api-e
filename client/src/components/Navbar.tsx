@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../utils/auth';
+import MovAPIeLogo from './Logo';
 
 const Navbar = () => {
   // State to track the login status
@@ -21,7 +22,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between w-fixed w-full flex-shrink flex-grow-0 px-4 items-center py-2 bg-red-900">
       <div className="flex justify-between items-center sticky top-0 p-4 w-full h-full">
-      <h1 className="text-white font-bold py-2 px-4 text-2xl" ><Link to='/'>Mov"API"e</Link></h1>
+      <h1 className="text-white font-bold py-2 px-4 text-2xl" ><Link to='/'><MovAPIeLogo /></Link></h1>
       <div>
         {
           // Conditional rendering based on loginCheck state

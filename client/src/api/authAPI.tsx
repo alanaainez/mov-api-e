@@ -1,7 +1,7 @@
 import { UserLogin } from "../interfaces/UserLogin";  // Import the UserLogin interface for typing userInfo
 
 // Function to send a POST request to the '/auth/login' endpoint with user login information
-const login = async (userInfo: UserLogin) => {
+export const login = async (userInfo: UserLogin) => {
   try {
     console.log(userInfo);
     // Send a POST request to '/auth/login' with user login information in JSON format
@@ -16,6 +16,7 @@ const login = async (userInfo: UserLogin) => {
     // Throw error if response status is not OK (200-299)
     if (!response.ok) {
       const errorData = await response.json(); // Parse error response as JSON
+      console.error(`Server error: ${response.status} - ${errorText}`); // Log the error response
       throw new Error(`Error: ${errorData.message}`); // Throw a detailed error message    
     }
 
@@ -29,4 +30,4 @@ const login = async (userInfo: UserLogin) => {
   }
 }
 
-export { login };  // Export the login function to be used elsewhere in the application
+ //export { login };  // Export the login function to be used elsewhere in the application
