@@ -1,5 +1,3 @@
-import React from 'react';
-
 const RemoveFavourites = () => {
     return (
         <div className="flex flex-grow items-center px-2">

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 import Auth from '../utils/auth'; // Assuming you have an Auth utility to get user info
 
 const Profile = () => {
@@ -17,9 +16,6 @@ const Profile = () => {
 
   const [user, setUser] = useState<User | null>(null);
   const [favourites, setFavourites] = useState<Favourite[]>([]);
-
-  const navigate = useNavigate();
-  
 
   useEffect(() => {
     // Fetch user information from Auth utility or an API
