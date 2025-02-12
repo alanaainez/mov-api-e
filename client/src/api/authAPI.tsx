@@ -5,7 +5,7 @@ export const login = async (userInfo: UserLogin) => {
   try {
     console.log(userInfo);
     // Send a POST request to '/auth/login' with user login information in JSON format
-    const response = await fetch('/auth/login', {
+    const response = await fetch('https://mov-api-e-server.onrender.com/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
