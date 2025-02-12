@@ -10,7 +10,8 @@ export default defineConfig({
     port: 3000,
     open: true,
     host:"0.0.0.0",
-    allowedHosts: ['https://mov-api-e-server.onrender.com/'],
+    allowedHosts: ['https://mov-api-e-client.onrender.com/'],
+    
     proxy: {
       '/api': {
         target: 'http://localhost:3001',
