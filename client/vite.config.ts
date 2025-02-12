@@ -7,10 +7,10 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    port: 3000,
+    port: 3001,
     open: true,
     host:"0.0.0.0",
-    allowedHosts: ['https://mov-api-e-client.onrender.com/'],
+    allowedHosts: ['https://mov-api-e-client.onrender.com'],
     
     proxy: {
       '/api': {
