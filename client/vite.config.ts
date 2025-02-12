@@ -14,12 +14,12 @@ export default defineConfig({
     
     proxy: {
       '/api': {
-        target: 'http://localhost:3001',
+        target: 'https://mov-api-e-server.onrender.com',
         changeOrigin: true,
         secure: false,
       },
       '/auth': {
-        target: 'http://localhost:3001',
+        target: 'https://mov-api-e-server.onrender.com',
         changeOrigin: true,
         secure: false
       },
