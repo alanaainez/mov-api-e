@@ -21,7 +21,7 @@ export default defineConfig({
       },
     "/auth": {
         //test local http://localhost:3001
-        target: "https://gamerz.onrender.com",
+        target: "https://mov-api-e.onrender.com",
         changeOrigin: true,
         secure: false,
       },
