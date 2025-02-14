@@ -5,13 +5,14 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    react(),
     tailwindcss(),
   ],
   server: {
-    allowedHosts: ["https://mov-api-e-client.onrender.com", "https://mov-api-e-server.onrender.com", "0.0.0.0"],
+    allowedHosts: ["mov-api-e-client.onrender.com", "mov-api-e-server.onrender.com", "0.0.0.0"],
+    host:"0.0.0.0",
     port: 3001,
     open: true,
-    host:"0.0.0.0",
     proxy: {
       "/api": {
         //test local http://localhost:3001
