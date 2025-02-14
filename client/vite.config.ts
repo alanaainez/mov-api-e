@@ -8,7 +8,7 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    allowedHosts: ["https://mov-api-e-client.onrender.com", "https://mov-api-e-server.onrender.com/"],
+    allowedHosts: ["https://mov-api-e-client.onrender.com", "https://mov-api-e-server.onrender.com", "0.0.0.0"],
     port: 3001,
     open: true,
     host:"0.0.0.0",
