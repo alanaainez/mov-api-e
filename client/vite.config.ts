@@ -8,20 +8,20 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    allowedHosts: ["https://mov-api-e-client.onrender.com", "mov-api-e.onrender.com"],
+    allowedHosts: ["https://mov-api-e-client.onrender.com", "https://mov-api-e-server.onrender.com/"],
     port: 3001,
     open: true,
     host:"0.0.0.0",
     proxy: {
       "/api": {
         //test local http://localhost:3001
-        target: "mov-api-e.onrender.com",
+        target: "https://mov-api-e-server.onrender.com/",
         changeOrigin: true,
         secure: false,
       },
     "/auth": {
         //test local http://localhost:3001
-        target: "https://mov-api-e.onrender.com",
+        target: "https://mov-api-e-server.onrender.com/",
         changeOrigin: true,
         secure: false,
       },
