@@ -18,13 +18,13 @@ export default defineConfig({
         //test local http://localhost:3001
         target: "https://mov-api-e-server.onrender.com/",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
     "/auth": {
         //test local http://localhost:3001
         target: "https://mov-api-e-server.onrender.com/",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
     },
   },
