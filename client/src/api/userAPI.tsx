@@ -2,7 +2,7 @@ import Auth from '../utils/auth';
 
 const retrieveUsers = async () => {
   try {
-    const response = await fetch('https://mov-api-e-server.onrender.com/api/users', {
+    const response = await fetch('/api/users', {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${Auth.getToken()}`
